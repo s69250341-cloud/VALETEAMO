@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para mi amor 💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffeef8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .message-box {
+      font-size: 1.15rem;
+      color: #333333;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      font-weight: 500;
+      padding: 12px;
+      background-color: #fff0f5;
+      border-radius: 12px;
+      line-height: 1.4;
+    }
+
+    button {
+      background-color: #ff6b8b;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+      transition: transform 0.2s, background-color 0.2s;
+      outline: none;
+      width: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      background-color: #ff4770;
+      transform: scale(1.03);
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>14 Meses Juntos, eres lo mejor que me ha pasado </h1>
+    <div class="message-box" id="mensaje">
+      Presiona el botón de abajo... 
+    </div>
+    <button type="button" id="btnAmor">¡Tócame!</button>
+  </div>
+
+  <script>
+    const frases = [
+      "¡Felices 14 meses, mi amor! ❤️",
+      "Cada día a tu lado es mi momento favorito.",
+      "Eres la persona más especial de mi vida. ✨",
+      "Gracias por tantas risas y desveladas juntos.",
+      "Te amo más de lo que las palabras pueden explicar.",
+      "Un mes más coleccionando momentos hermosos contigo.",
+      "Cada día contigo es un día feliz 🏡💕",
+      "Tus ojos son mi lugar favorito. ❤️",
+      "Me pierdo bonito cuando miro tus ojos.",
+      "Tus ojos hacen que todo se vea más bonito.",
+      "Podría quedarme mirándote por horas.",
+      "Contando los días para darte un abrazo de verdad.",
+      "¡Eres mi lugar seguro! 💖",
+      "Gracias por ser mi novia, mi mejor amiga y mi todo.",
+      "Te amo mi niña de ojitos hermosos.",
+      "La perfección sí existe, son esos ojitos color avellana ✨",
+      "Tus ojos tienen algo que no sé explicar.",
+      "Qué suerte la mía poder mirar esos ojitos."
+      "Esa mirada tuya tiene el poder de calmar todo a mi alrededor.",
+      "No hay nada en este mundo que se compare con la luz de tus ojos.",
+      "Cada llamada a tu lado se me pasa volando de lo feliz que me haces.",
+      "Tus ojitos color avellana son y siempre seran mi universo entero.",
+      "Me enamoro un poquito mas de ti con cada detalle y cada sonrisa.",
+      "Estar contigo es la decision mas bonita que he tomado en mi vida.",
+      "Mirar tus ojos es como sentir que ya estoy en casa.",
+      "No me canso ni me cansare nunca de admirar lo hermosa que eres.",
+      "Gracias por llenar mis dias de tanta ternura y amor sincero.",
+      "Tienes la mirada mas dulce y perfecta que haya existido jamas.",
+      "Tu felicidad es y siempre sera mi prioridad favorita.",
+      "Si supieras lo bonito que se siente cuando me miras de esa forma.",
+      "Eres mi pensamiento favorito a cualquier hora del dia.",
+      "14 meses a tu lado son solo el comienzo de nuestra gran historia.",
+      "Nadie mas tiene el brillo que llevan tus ojos al hablar."
+    ];
+
+    let indiceActual = -1;
+
+    document.getElementById('btnAmor').addEventListener('click', function() {
+      let nuevoIndice;
+      
+      // Evita mostrar la misma frase de forma consecutiva
+      do {
+        nuevoIndice = Math.floor(Math.random() * frases.length);
+      } while (nuevoIndice === indiceActual && frases.length > 1);
+
+      indiceActual = nuevoIndice;
+      document.getElementById('mensaje').innerText = frases[indiceActual];
+    });
+  </script>
+
+</body>
+</html>
